@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-jmcomic-pdf",
-  "description": "",
-  "version": "0.0.1",
+  "description": "Koishi plugin for generating and sending JM comic PDFs.",
+  "version": "0.0.3",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -9,18 +9,11 @@
     "dist"
   ],
   "license": "GPL-2.0",
-  "homepage": "https://home.waveyo.cn",
-  "repository": 
-    {
-      "type": "git",
-      "url": "https://github.com/WaveYo/koishi-plugin-jmcomic-pdf.git"
-    },
-  "koishi": {
-    "description": {
-      "zh": "获取发送JM漫画PDF，依赖后端项目“jm_img-to-pdf”"
-      }
-    },
-  "scripts": {},
+  "homepage": "ttps://github.com/WaveYo/koishi-plugin-jmcomic-pdf.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WaveYo/koishi-plugin-jmcomic-pdf.git"
+  },
   "keywords": [
     "chatbot",
     "koishi",
@@ -28,12 +21,19 @@
     "jmcomic",
     "pdf"
   ],
-  "service": {
-    "required": ["http"],             
-  "preview": "ture",
-  "devDependencies": {},
   "peerDependencies": {
     "koishi": "^4.18.7"
-    }
+  },
+  "devDependencies": {},
+  "koishi": {
+    "description": {
+      "zh": "获取发送JM漫画PDF，依赖后端项目“jm_img-to-pdf”"
+    },
+    "service": {
+      "required": ["http"]
+    },
+    "locales": [
+      "zh"
+    ]
   }
 }
