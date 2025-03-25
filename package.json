@@ -1,19 +1,27 @@
 {
   "name": "koishi-plugin-jmcomic-pdf-2",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
     "lib",
     "dist"
   ],
-  "license": "MIT",
-  "scripts": {},
+  "license": "GPL-2.0",
+  "homepage": "https://home.waveyo.cn",
+  "repository": 
+    {
+      "type": "git",
+      "url": "https://github.com/WaveYo/koishi-plugin-jmcomic-pdf-2.git"
+    },
+   "scripts": {},
   "keywords": [
     "chatbot",
     "koishi",
-    "plugin"
+    "plugin",
+    "jmcomic",
+    "pdf"
   ],
   "devDependencies": {},
   "peerDependencies": {
