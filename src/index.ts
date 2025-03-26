@@ -16,6 +16,11 @@ export const Config: Schema<Config> = Schema.object({
 })
 
 export function apply(ctx: Context, config: Config) {
+
+  ctx.on('ready', () => {
+    ctx.logger('jmcomic-pdf').info('插件已加载')
+  })
+
   ctx.command('jm <id>', '下载并发送指定 ID 的本子 PDF')
     .action(async ({ session }, id) => {
       if (!id) return '请输入本子 ID。'
@@ -48,6 +53,7 @@ export function apply(ctx: Context, config: Config) {
         fs.writeFileSync(pdfFilePath, pdfBuffer)
 
         // 将 PDF 文件发送给用户
+        if (!session) return '该命令需要在会话上下文中使用'
         await session.send(h('file', { type: 'file', url: `file://${pdfFilePath}`, name: pdfFileName }))
 
         // // 删除 PDF 文件
@@ -55,7 +61,8 @@ export function apply(ctx: Context, config: Config) {
 
         return 'PDF 文件已发送。'
       } catch (error) {
-        return `处理失败：${error.message}`
+        const message = error instanceof Error ? error.message : '未知错误'
+        return `处理失败：${message}`
       }
     })
 }

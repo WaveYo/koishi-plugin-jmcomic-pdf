@@ -1,24 +1,33 @@
 {
   "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
     "rootDir": "src",
     "outDir": "lib",
-    "target": "es2022",
-    "module": "esnext",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "composite": true,
-    "incremental": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "moduleResolution": "bundler",
-    "jsx": "react-jsx",
-    "jsxImportSource": "@satorijs/element",
+    "paths": {
+      "koishi": ["./node_modules/koishi/lib/index"]
+    },
     "types": [
       "node",
       "yml-register/types"
-    ]
+    ],
+    "lib": ["ES2022", "DOM"],
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "composite": true,
+    "incremental": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@satorijs/element",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitOverride": true,
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }
