@@ -7,7 +7,8 @@
     "rootDir": "src",
     "outDir": "lib",
     "paths": {
-      "koishi": ["./node_modules/koishi/lib/index"]
+      "koishi": ["./node_modules/koishi/lib/index"],
+      "@Waves_Man/koishi-plugin-jmcomic-pdf": ["external/*/src"],
     },
     "types": [
       "node",

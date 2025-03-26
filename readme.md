@@ -10,6 +10,8 @@
 ### 您当前正在浏览：koishi-plugin-jmcomic-pdf
 点此前往 [jm_img-to-pdf](https://github.com/WaveYo/jm_img-to-pdf)
 
+### Warning: 该项目仍处于开发阶段，一知存在一个重大 bug。
+
 
 ### 项目概述
 `koishi-plugin-jmcomic-pdf` 是一个 Koishi 插件，用于通过 `jm_img-to-pdf` 服务获取 JMComic 的 PDF 文件并发送给用户。

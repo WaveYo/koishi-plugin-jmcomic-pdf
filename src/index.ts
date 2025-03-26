@@ -1,5 +1,4 @@
 import { Context, Schema, h } from 'koishi'
-import { } from '@koishijs/plugin-http'
 import fs from 'fs'
 import path from 'path'
 
@@ -16,7 +15,6 @@ export const Config: Schema<Config> = Schema.object({
 })
 
 export function apply(ctx: Context, config: Config) {
-
   ctx.on('ready', () => {
     ctx.logger('jmcomic-pdf').info('插件已加载')
   })
@@ -56,10 +54,10 @@ export function apply(ctx: Context, config: Config) {
         if (!session) return '该命令需要在会话上下文中使用'
         await session.send(h('file', { type: 'file', url: `file://${pdfFilePath}`, name: pdfFileName }))
 
-        // // 删除 PDF 文件
-        // fs.unlinkSync(pdfFilePath)
+        // 删除 PDF 文件
+        fs.unlinkSync(pdfFilePath)
 
-        return 'PDF 文件已发送。'
+        return download_url+'PDF 文件已发送。'
       } catch (error) {
         const message = error instanceof Error ? error.message : '未知错误'
         return `处理失败：${message}`
